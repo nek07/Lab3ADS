@@ -14,6 +14,11 @@ public class MyArrayListQueue<T> {
         T removedElement =queue.remove(index);
         return removedElement;
     }
-
+    public T peek(){
+        if(queue.size()==0){
+            return null;
+        }
+        return queue.get(0);
+    }
 
 }
