@@ -16,6 +16,12 @@ public class MyLinkedListStack<T> {
             throw new EmptyStackException();
         }
     }
+    public T pop(){
+        isEmptyThrowException();
+        T removedElement = stack.remove(0);
+        return removedElement;
+    }
+
 
 
 }
