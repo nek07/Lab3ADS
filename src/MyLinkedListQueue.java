@@ -14,6 +14,15 @@ public class MyLinkedListQueue<T> {
     public int size(){
         return queue.size();
     }
+    public boolean isEmpty(){
+        return size()==0;
+    }
+    private void isEmptyThrowException() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+    }
+
 
 
 }
