@@ -7,6 +7,11 @@ public class MyLinkedListQueue<T> {
     public void enqueue(T item){
         queue.add(item);
     }
+    public T dequeue(){
+
+        T removedItem = queue.remove(0);
+        return removedItem;
+    }
 
 
 }
