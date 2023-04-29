@@ -21,6 +21,10 @@ public class MyLinkedListStack<T> {
         T removedElement = stack.remove(0);
         return removedElement;
     }
+    public T peek(){
+        return stack.get(0);
+    }
+
 
 
 
