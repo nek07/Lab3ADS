@@ -1,4 +1,4 @@
-import java.util.EmptyStackException;
+
 import java.util.NoSuchElementException;
 public class MyArrayListQueue<T> {
     MyArrayList<T> queue;
@@ -11,9 +11,9 @@ public class MyArrayListQueue<T> {
         queue.add(item);
     }
 
-    public T dequeue(int index) {
+    public T dequeue() {
         isEmptyThrowException();
-        T removedElement = queue.remove(index);
+        T removedElement = queue.remove(0);
         return removedElement;
     }
 
