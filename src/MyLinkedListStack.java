@@ -10,12 +10,20 @@ public class MyLinkedListStack<T> {
     public MyLinkedListStack(){
         stack = new MyLinkedList<>();
     }
-
+    /*
+      @push - add element to the first position in stack
+      @T item - generic type any object
+      @add - method of the MyArrayList(adds element by index)
+      @return void
+     */
     public void push(T item){
         stack.add(item, 0);
 
     }
-
+    /*
+     @isEmpty - checks is the stack empty or not
+     @return boolean
+   */
     public boolean isEmpty(){
         return stack.size() == 0;
     }
