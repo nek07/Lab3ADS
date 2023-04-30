@@ -23,7 +23,7 @@ public class MyArrayListQueue<T> {
     /*
       @dequeue - remove and retrieve top element of the queue.
       @no parameters
-      @remove - method of the MyLinkedList(remove element by index)
+      @remove - method of the MyArrayList(remove element by index)
       @isEmptyThrowException - throw exception null
       @return void
      */
@@ -35,7 +35,7 @@ public class MyArrayListQueue<T> {
     /*
       @peek - retrieve the first element of the queue
       @isEmptyThrowException - throw exception null
-      @get - method of the LinkedList(get the element).
+      @get - method of the MyArrayList(get the element).
       @return T - generic type object
      */
     public T peek() {
@@ -56,6 +56,10 @@ public class MyArrayListQueue<T> {
     public boolean isEmpty() {
         return size() == 0;
     }
+    /*
+      @isEmptyThrowException - throw NoSuchElementException(), which is in java.util
+      @return void
+    */
     private void isEmptyThrowException() {
         if (isEmpty()) {
             throw new NoSuchElementException();
