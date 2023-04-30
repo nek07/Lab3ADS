@@ -32,7 +32,7 @@ public class MyArrayListStack<T> {
         return removedElement;
     }
     /*
-      @peek - retrieve the first element of the queue
+      @peek - retrieve the first element of the stack
       @isEmptyThrowException - throw exception null
       @get - method of the MyArrayList(get the element).
       @return T - generic type object
@@ -42,14 +42,14 @@ public class MyArrayListStack<T> {
         return stack.get(0);
     }
     /*
-    @isEmpty - checks is the queue empty or not
-    @return boolean
+     @isEmpty - checks is the stack empty or not
+     @return boolean
    */
     public boolean isEmpty(){
         return stack.size() == 0;
     }
     /*
-     @size - return the size of queue
+     @size - return the size of stack
      @return int - size
     */
     public int size(){
