@@ -42,12 +42,14 @@ public class MyLinkedList<T>{
         checkIndex(index);
         if (head == null) {
             head = newNode;
-        } else {
+        }
+        else {
             prevNode = (MyNode<T>) getNode(index-1);
             newNode.next = prevNode.next; //make new connection between elements
             prevNode.next = newNode; //add new element in spec-place
 
         }
+        size++;
     }
     /*
         @remove() - delete the item in LinkedList
@@ -60,13 +62,7 @@ public class MyLinkedList<T>{
     public boolean remove(T item) {
         int index=indexOf(item);
         checkIndex(index); //exception
-        if (index == 0) {
-            head = head.next;
-        } else {
-            MyNode<T> before = (MyNode<T>) getNode(index-1); //take the element before index's value
-            before = before.next; //connect the element before and after specified index
-            return true;
-        }
+        remove(index);
         size--;
         return false;
     }
@@ -82,8 +78,9 @@ public class MyLinkedList<T>{
         MyNode current = head;
         int count = 0;
         if(index==0){
-            head=head.next;
             element = (T) head.data;
+            head=head.next;
+            size--;
         }
         else{
             while(count!=index-1){
@@ -92,10 +89,11 @@ public class MyLinkedList<T>{
             }
             element=(T)current.next.data;
             current.next=current.next.next;
+            size--;
         }
 
 
-        return (T)element;
+        return (T) element;
     }
     /*
         @clear() - delete all the elements
@@ -115,6 +113,9 @@ public class MyLinkedList<T>{
     */
     public T get(int index) {
         MyNode current = head;
+        if(index==0){
+            return (T) current.data;
+        }
         for (int i = 0; i < index; i++) {
             current = current.next;
         }
@@ -220,7 +221,7 @@ public class MyLinkedList<T>{
             @return void
     */
     private void checkIndex(int index) {
-        if (index < 0 || index >= size) {
+        if (index<0 && index >= size) {
             throw new IndexOutOfBoundsException(); //exception
         }
     }
@@ -262,6 +263,15 @@ public class MyLinkedList<T>{
             index++;
             size++;
         }
+    }
+    public T removeFirst(int index) {
+        T element = null;
+        if (index == 0) {
+            element = (T) head.data;
+            head = head.next;
+            size--;
+        }
+        return element;
     }
 
 }

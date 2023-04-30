@@ -27,13 +27,13 @@ public class MyArrayListQueue<T> {
     }
 
     public boolean isEmpty() {
-        return queue.size() == 0;
+        return size() == 0;
     }
-
     private void isEmptyThrowException() {
         if (isEmpty()) {
             throw new NoSuchElementException();
         }
     }
+
 
 }

@@ -8,6 +8,7 @@ public class MyLinkedListQueue<T> {
         queue.add(item);
     }
     public T dequeue(){
+        isEmptyThrowException();
         T removedItem = queue.remove(0);
         return removedItem;
     }
@@ -17,6 +18,11 @@ public class MyLinkedListQueue<T> {
     public boolean isEmpty(){
         return size()==0;
     }
+    public T peek(){
+        isEmptyThrowException();
+        return queue.get(0);
+    }
+
     private void isEmptyThrowException() {
         if (isEmpty()) {
             throw new NoSuchElementException();

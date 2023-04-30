@@ -6,14 +6,14 @@ public class MyLinkedListStack<T> {
         stack = new MyLinkedList<>();
     }
     public void push(T item){
-        stack.add(item,0);
+        stack.add(item, 0);
     }
     public boolean isEmpty(){
         return stack.size() == 0;
     }
     public T pop(){
         isEmptyThrowException();
-        T removedElement = stack.remove(0);
+        T removedElement = stack.removeFirst(0);
         return removedElement;
     }
     public T peek(){

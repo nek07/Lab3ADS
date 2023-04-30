@@ -76,7 +76,7 @@ public class MyArrayList<T>{
     */
 
     public void add(T item, int index) {
-        checkIndex(index);
+
         if (size == capacity) {
             increseBuffer();
         }
@@ -176,8 +176,8 @@ public class MyArrayList<T>{
         @IndexOutOfBoundsException()- exception which checks is the index greater than size or smaller than 0
         @return void
      */
-    private void checkIndex(int index) {
-        if (index < 0 || index >= size) {
+    void checkIndex(int index) {
+        if (index >= size) {
             throw new IndexOutOfBoundsException(); //exception
         }
     }
