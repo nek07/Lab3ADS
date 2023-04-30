@@ -265,13 +265,14 @@ public class MyLinkedList<T>{
         }
     }
     public T removeFirst(int index) {
-        T element = null;
-        if (index == 0) {
-            element = (T) head.data;
-            head = head.next;
-            size--;
+        checkIndex(0);
+        T removedValue = head.data;
+        head = head.next;
+        size--;
+        if (size == 0) {
+            tail = null;
         }
-        return element;
+        return removedValue;
     }
 
 }

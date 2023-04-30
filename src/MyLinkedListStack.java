@@ -13,7 +13,7 @@ public class MyLinkedListStack<T> {
     /*
       @push - add element to the first position in stack
       @T item - generic type any object
-      @add - method of the MyArrayList(adds element by index)
+      @add - method of the MyLinkedList(adds element by index)
       @return void
      */
     public void push(T item){
